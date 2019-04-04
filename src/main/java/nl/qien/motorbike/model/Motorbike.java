@@ -44,4 +44,14 @@ public class Motorbike {
     public void setColor(String color) {
         this.color = color;
     }
+
+    @Override
+    public String toString() {
+        return "Motorbike{" +
+                "id=" + id +
+                ", color='" + color + '\'' +
+                ", brand='" + brand + '\'' +
+                ", type='" + type + '\'' +
+                '}';
+    }
 }

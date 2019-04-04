@@ -1,5 +1,6 @@
 package nl.qien.motorbike.api;
 
+import nl.qien.motorbike.components.Raceteam;
 import nl.qien.motorbike.model.Motorbike;
 import nl.qien.motorbike.persistence.MotorbikeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,9 @@ public class MotorbikeController {
     @Autowired
     private MotorbikeRepository repository;
 
+    @Autowired
+    private Raceteam raceteam;
+
     @PostMapping
     public Motorbike create(@RequestBody Motorbike motorbike) {
         return this.repository.save(motorbike);
@@ -22,5 +26,13 @@ public class MotorbikeController {
     @GetMapping
     public ResponseEntity<Iterable<Motorbike>> list() {
         return ResponseEntity.ok(this.repository.findAll());
+    }
+
+    @GetMapping("/printTeam")
+    public ResponseEntity<Raceteam> printteam() {
+
+        System.out.println(this.raceteam);
+
+        return ResponseEntity.ok(this.raceteam);
     }
 }
