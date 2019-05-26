@@ -1,6 +1,6 @@
 package nl.qien.motorbike.services;
 
-import io.micrometer.core.annotation.Timed;
+import nl.qien.motorbike.aspects.Timed;
 import nl.qien.motorbike.model.Motorbike;
 import nl.qien.motorbike.persistence.MotorbikeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
