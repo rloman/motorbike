@@ -24,6 +24,7 @@ public class MotorbikeServiceTest {
     public void testSave() {
         Motorbike b = new Motorbike();
         b.setColor("Black");
+        b.setCc(500);
 
         // make the mock do what I want
         // given
@@ -35,7 +36,7 @@ public class MotorbikeServiceTest {
 
         // assert
         // then
-        Assert.assertEquals(500, resultFromSave.getCC());
+        Assert.assertEquals(500, resultFromSave.getCc());
         Assert.assertEquals(0, resultFromSave.getId());
         Assert.assertEquals("Black", resultFromSave.getColor());
 

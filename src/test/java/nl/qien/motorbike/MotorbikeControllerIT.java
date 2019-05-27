@@ -8,10 +8,12 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.ResponseEntity;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
+@ActiveProfiles("integrationtest")
 public class MotorbikeControllerIT {
 
 
@@ -21,6 +23,14 @@ public class MotorbikeControllerIT {
 
     @Test
     public void testCreate() {
+
+        ResponseEntity<Iterable<Motorbike>> response = this.controller.list();
+        Iterable<Motorbike> lijst = response.getBody();
+
+        int oldSize = 0;
+        for(Motorbike element: lijst) {
+            oldSize++;
+        }
 
         // Arrange
         Motorbike newOne = new Motorbike();
@@ -32,14 +42,15 @@ public class MotorbikeControllerIT {
 
 
         // Assert
-        ResponseEntity<Iterable<Motorbike>> response = this.controller.list();
-        Iterable<Motorbike> lijst = response.getBody();
+       response = this.controller.list();
+        lijst = response.getBody();
+
 
         int size = 0;
         for(Motorbike element: lijst) {
             size++;
         }
 
-        Assert.assertEquals(1, size);
+        Assert.assertEquals(oldSize+1, size);
     }
 }

@@ -5,6 +5,7 @@ import nl.qien.motorbike.persistence.MotorbikeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -13,10 +14,8 @@ public class MotorbikeService {
     @Autowired
     private MotorbikeRepository motorbikeRepository;
 
-
     public Motorbike save(Motorbike motorbike) {
 
-        motorbike.setCC(500);
         return this.motorbikeRepository.save(motorbike);
     }
 
@@ -24,7 +23,7 @@ public class MotorbikeService {
         return motorbikeRepository.findById(aLong);
     }
 
-    public Iterable<Motorbike> findAll() {
+    public List<Motorbike> findAll() {
         return motorbikeRepository.findAll();
     }
 
