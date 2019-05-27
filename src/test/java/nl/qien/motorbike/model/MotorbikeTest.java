@@ -24,4 +24,11 @@ public class MotorbikeTest {
 
         Assert.assertEquals("730I", this.motorbike.getType());
     }
+
+    @Test
+    public void testGetAndSetForcc() {
+        this.motorbike.setCC(500);
+
+        Assert.assertEquals(500, this.motorbike.getCC());
+    }
 }
