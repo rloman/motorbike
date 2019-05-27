@@ -15,6 +15,7 @@ public class Motorbike {
     private String color;
     private String brand;
     private String type;
+    private int cc;
 
     public long getId() {
         return id;
@@ -44,6 +45,14 @@ public class Motorbike {
         this.color = color;
     }
 
+    public void setCC(int CC) {
+        this.cc = CC;
+    }
+
+    public int getCC() {
+        return this.cc;
+    }
+
     @Override
     public String toString() {
         return "Motorbike{" +
@@ -53,4 +62,7 @@ public class Motorbike {
                 ", type='" + type + '\'' +
                 '}';
     }
+
+
+
 }
