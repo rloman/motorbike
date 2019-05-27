@@ -16,7 +16,6 @@ public class MotorbikeService {
 
     public Motorbike save(Motorbike motorbike) {
 
-        motorbike.setCC(500);
         return this.motorbikeRepository.save(motorbike);
     }
 

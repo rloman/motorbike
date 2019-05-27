@@ -1,8 +1,7 @@
 package nl.qien.motorbike.model;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
+import lombok.*;
+import net.bytebuddy.asm.Advice;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,9 +9,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-@EqualsAndHashCode
 @Data
-@ToString
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Motorbike {
 
     @Id

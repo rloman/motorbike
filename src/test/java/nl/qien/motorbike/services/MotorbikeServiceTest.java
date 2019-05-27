@@ -35,7 +35,7 @@ public class MotorbikeServiceTest {
 
         // assert
         // then
-        Assert.assertEquals(500, resultFromSave.getCC());
+        Assert.assertEquals(500, resultFromSave.getCc());
         Assert.assertEquals(0, resultFromSave.getId());
         Assert.assertEquals("Black", resultFromSave.getColor());
 

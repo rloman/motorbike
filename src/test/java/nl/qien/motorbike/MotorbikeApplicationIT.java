@@ -10,9 +10,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
-@ActiveProfiles("integrationtest")
+@RunWith(SpringRunner.class) // runs with SpringRunner
+@SpringBootTest // indicates this is a Spring Boot (integration) test
+@ActiveProfiles("integrationtest") // reads the values of application-integrationtest.properties file AFTER reading the application.properties file!!!
 public class MotorbikeApplicationIT {
 
     @Autowired
@@ -29,7 +29,7 @@ public class MotorbikeApplicationIT {
             //given (arrange)
             Motorbike b = new Motorbike();
             b.setColor("Red");
-            b.setCC(500);
+            b.setCc(500);
             b.setBrand("Suzuki");
 
 
@@ -49,7 +49,7 @@ public class MotorbikeApplicationIT {
             //given (arrange)
             Motorbike b = new Motorbike();
             b.setColor("Red");
-            b.setCC(500);
+            b.setCc(500);
             b.setBrand("Suzuki");
 
 
