@@ -21,11 +21,6 @@ public class Motorbike {
         return id;
     }
 
-    // for testing only
-    public void setId(long id) {
-        this.id = id;
-    }
-
     public String getBrand() {
         return brand;
     }
