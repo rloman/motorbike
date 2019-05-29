@@ -3,6 +3,7 @@ package nl.qien.motorbike.config;
 import nl.qien.motorbike.model.Motorbike;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 
 @Configuration
 public class MyBeans {
@@ -27,6 +28,15 @@ public class MyBeans {
     public Motorbike jasper() {
         Motorbike j = new Motorbike();
         j.setOwner("Jasper");
+
+        return j;
+    }
+
+    @Bean
+    @Scope("prototype")
+    public Motorbike marjolein() {
+        Motorbike j = new Motorbike();
+        j.setOwner("Marjolein");
 
         return j;
     }
