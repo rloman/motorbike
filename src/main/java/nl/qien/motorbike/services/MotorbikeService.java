@@ -1,5 +1,6 @@
 package nl.qien.motorbike.services;
 
+import nl.qien.motorbike.aop.Timed;
 import nl.qien.motorbike.model.Motorbike;
 import nl.qien.motorbike.persistence.MotorbikeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,7 @@ public class MotorbikeService {
         return motorbikeRepository.findById(aLong);
     }
 
+    @Timed
     public List<Motorbike> findAll() {
         return motorbikeRepository.findAll();
     }
