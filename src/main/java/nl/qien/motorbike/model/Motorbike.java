@@ -24,4 +24,6 @@ public class Motorbike {
     private String type;
     private int cc;
 
+    private String owner;
+
 }
