@@ -12,8 +12,7 @@ import nl.qien.motorbike.injecting.MotorServiceInjectDemo;
 import nl.qien.motorbike.model.Motorbike;
 import org.springframework.util.Assert;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 
 public class MotorbikeXmlParseApp {
 
@@ -32,20 +31,32 @@ public class MotorbikeXmlParseApp {
 
         //... then read back the motorbike from file
         {
+            Motorbike readBack = readFromFile("motorbike.xml");
 
+            System.out.println(readBack);
         }
 
 
     }
 
     private static Motorbike readFromFile(String fileName) throws JsonParseException, JsonMappingException, IOException {
-        ObjectMapper mapper = new ObjectMapper().registerModule(new ParameterNamesModule())
-                .registerModule(new Jdk8Module())
-                .registerModule(new JavaTimeModule());
-        // JSON from file to Object
-        Motorbike resume = mapper.readValue(new File(fileName), Motorbike.class);
+        File file = new File("motorbike.xml");
+        XmlMapper xmlMapper = new XmlMapper();
+        String xml = inputStreamToString(new FileInputStream(file));
+        Motorbike value = xmlMapper.readValue(xml, Motorbike.class);
 
-        return resume;
+        return value;
+    }
+
+    public static String inputStreamToString(InputStream is) throws IOException {
+        StringBuilder sb = new StringBuilder();
+        String line;
+        BufferedReader br = new BufferedReader(new InputStreamReader(is));
+        while ((line = br.readLine()) != null) {
+            sb.append(line);
+        }
+        br.close();
+        return sb.toString();
     }
 
     private static void writeToXml(Motorbike motorbike) throws IOException {
