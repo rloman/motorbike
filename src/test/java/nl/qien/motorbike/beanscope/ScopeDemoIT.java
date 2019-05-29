@@ -17,13 +17,23 @@ public class ScopeDemoIT {
     private Motorbike jeroen;
 
     @Autowired
+    private Motorbike marjolein;
+
+    @Autowired
     private ScopeDemo scopeDemo;
 
     @Test
-    // add
     public void testScopeDemoHisJeroenAndLocalJeroenShouldBeTheSame() {
 
         Assert.assertTrue(this.jeroen == scopeDemo.getJeroen());
+
+    }
+
+    // add now @Scope("prototype") to MyBeans::jeroen and it should fail // see MyBeans::marjolein
+    @Test
+    public void testScopeDemoHisMarjoleinAndLocalMarjoleinShouldBeDifferentInstance() {
+
+        Assert.assertTrue(this.marjolein != scopeDemo.getMarjolein());
 
     }
 
@@ -34,11 +44,19 @@ public class ScopeDemoIT {
 
 @Component
 class ScopeDemo {
+
     @Autowired
     private Motorbike jeroen;
+
+    @Autowired
+    private Motorbike marjolein;
 
 
     public Motorbike getJeroen() {
         return jeroen;
+    }
+
+    public Motorbike getMarjolein() {
+        return marjolein;
     }
 }
