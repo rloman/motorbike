@@ -11,6 +11,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
+// mandatory read: https://www.tutorialspoint.com/spring/spring_bean_scopes.htm
 public class ScopeDemoIT {
 
     @Autowired
@@ -36,10 +37,6 @@ public class ScopeDemoIT {
         Assert.assertTrue(this.marjolein != scopeDemo.getMarjolein());
 
     }
-
-
-
-
 }
 
 @Component
