@@ -1,19 +1,15 @@
 package nl.qien.motorbike;
 
 import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import com.fasterxml.jackson.module.paramnames.ParameterNamesModule;
-import nl.qien.motorbike.injecting.MotorServiceInjectDemo;
 import nl.qien.motorbike.model.Motorbike;
-import org.springframework.util.Assert;
 
 import java.io.*;
 
+/*
+This class SHOWS A WAY to write an Object (Motorbike) to file and vice versa
+ */
 public class MotorbikeXmlParseApp {
 
     public static void main(String[] args) throws IOException {
@@ -34,6 +30,8 @@ public class MotorbikeXmlParseApp {
             Motorbike readBack = readFromFile("motorbike.xml");
 
             System.out.println(readBack);
+
+
         }
 
 
@@ -48,7 +46,7 @@ public class MotorbikeXmlParseApp {
         return value;
     }
 
-    public static String inputStreamToString(InputStream is) throws IOException {
+    private static String inputStreamToString(InputStream is) throws IOException {
         StringBuilder sb = new StringBuilder();
         String line;
         BufferedReader br = new BufferedReader(new InputStreamReader(is));
