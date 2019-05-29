@@ -1,4 +1,4 @@
-package nl.qien.motorbike.aspects;
+package nl.qien.motorbike.aop;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -20,7 +20,7 @@ public class TimeLogAspect {
 
     private Logger logger = LoggerFactory.getLogger(TimeLogAspect.class);
 
-    @Around("@annotation(nl.qien.motorbike.aspects.Timed) && execution(public * *(..))")
+    @Around("@annotation(nl.qien.motorbike.aop.Timed) && execution(public * *(..))")
     public Object time(final ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
 
         long start = System.currentTimeMillis();
