@@ -1,7 +1,6 @@
 package nl.qien.motorbike.reflection;
 
 import nl.qien.motorbike.model.Motorbike;
-import org.hibernate.boot.jaxb.SourceType;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Constructor;
