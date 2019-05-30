@@ -1,4 +1,4 @@
-package nl.qien.motorbike;
+package nl.qien.motorbike.xmlparsing;
 
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -37,16 +37,21 @@ public class MotorbikeXmlParseApp {
 
     }
 
-    private static Motorbike readFromFile(String fileName) throws JsonParseException, JsonMappingException, IOException {
+    public static void writeToXml(Motorbike motorbike) throws IOException {
+        XmlMapper xmlMapper = new XmlMapper();
+        xmlMapper.writeValue(new File("motorbike.xml"), motorbike);
+    }
+
+    public static Motorbike readFromFile(String fileName) throws JsonParseException, JsonMappingException, IOException {
         File file = new File("motorbike.xml");
         XmlMapper xmlMapper = new XmlMapper();
-        String xml = inputStreamToString(new FileInputStream(file));
+        String xml = getStringFromInputStream(new FileInputStream(file));
         Motorbike value = xmlMapper.readValue(xml, Motorbike.class);
 
         return value;
     }
 
-    private static String inputStreamToString(InputStream is) throws IOException {
+    private static String getStringFromInputStream(InputStream is) throws IOException {
         StringBuilder sb = new StringBuilder();
         String line;
         BufferedReader br = new BufferedReader(new InputStreamReader(is));
@@ -55,10 +60,5 @@ public class MotorbikeXmlParseApp {
         }
         br.close();
         return sb.toString();
-    }
-
-    private static void writeToXml(Motorbike motorbike) throws IOException {
-        XmlMapper xmlMapper = new XmlMapper();
-        xmlMapper.writeValue(new File("motorbike.xml"), motorbike);
     }
 }
