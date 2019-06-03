@@ -1,7 +1,9 @@
-package nl.qien.motorbike.services;
+package nl.qien.motorbike.mockitoannotations.spy;
 
 import nl.qien.motorbike.model.Motorbike;
 import nl.qien.motorbike.persistence.MotorbikeRepository;
+import nl.qien.motorbike.services.MotorBikeRepoMock;
+import nl.qien.motorbike.services.MotorbikeService;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

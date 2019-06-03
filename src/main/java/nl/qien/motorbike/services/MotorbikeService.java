@@ -14,6 +14,7 @@ public class MotorbikeService {
 
     private MotorbikeRepository motorbikeRepository;
 
+	// constructor based injection (better for testing)
     public MotorbikeService(MotorbikeRepository motorbikeRepository) {
         this.motorbikeRepository = motorbikeRepository;
     }
