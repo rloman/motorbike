@@ -23,6 +23,9 @@ public class FeignDemoApp {
                 .logLevel(Logger.Level.FULL)
                 .target(MotorbikeClient.class, API);
 
+        // vanaf hier is mijn REST client zichtbaar als
+        // normale java code
+
         List<Motorbike> allMotorbikes = motorbikeClient.findAll();
 
         System.out.println(allMotorbikes);
