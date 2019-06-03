@@ -14,8 +14,16 @@ import java.util.List;
 @RunWith(MockitoJUnitRunner.class)
 public class ListSpyDemoTest {
 
+    //!!!!!!!!!!!!!!!!!!!!!!!!!!!//
+
+    // READ this
+
+    //See MotorbikeServiceTest to have a better example than this below
+    // (although you might also try this example, I think the MotorBikeServiceTest
+    //shows it a lot better and as supposed to use)
+
     // a spy is a spy :-) It keeps tracks of the things that happen to it!
-//    @Spy
+    @Spy
     private List list = new ArrayList<>();
     // and yes ... a Spy is also used and usable to Spy on an existing legacy code project
 
