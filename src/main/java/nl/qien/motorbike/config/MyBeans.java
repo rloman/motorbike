@@ -34,7 +34,7 @@ public class MyBeans {
     }
 
     @Bean
-    @Scope(ScopeValidForSpringBootScopeAnnotation.SINGLETON)
+    @Scope(ScopeValidForSpringBootScopeAnnotation.PROTOTYPE)
     public Motorbike marjolijn() {
         Motorbike j = new Motorbike();
         j.setOwner("Marjolijn");
