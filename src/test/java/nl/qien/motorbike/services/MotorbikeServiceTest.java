@@ -18,13 +18,15 @@ public class MotorbikeServiceTest {
     @InjectMocks
     private MotorbikeService motorbikeService ;
 
-//    @Spy
-    @Mock
+    @Spy
+//    @Mock
     private CrudRepository<Motorbike, Long> motorbikeRepository = new MotorBikeRepoMock();
 
 
     @Test
     public void testSave() {
+
+        this.motorbikeService = new MotorbikeService(this.motorbikeRepository);
         Motorbike b = new Motorbike();
         b.setColor("Black");
         b.setCc(500);

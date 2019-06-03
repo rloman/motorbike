@@ -10,7 +10,7 @@ public class MotorBikeRepoMock  implements CrudRepository<Motorbike, Long> {
 
     @Override
     public Motorbike  save(Motorbike s) {
-        return null;
+        return s;
     }
 
 

@@ -12,8 +12,11 @@ import java.util.Optional;
 @Service
 public class MotorbikeService {
 
-    @Autowired
     private MotorbikeRepository motorbikeRepository;
+
+    public MotorbikeService(MotorbikeRepository motorbikeRepository) {
+        this.motorbikeRepository = motorbikeRepository;
+    }
 
     public Motorbike save(Motorbike motorbike) {
 
