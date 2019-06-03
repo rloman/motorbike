@@ -2,7 +2,6 @@ package nl.qien.motorbike.services;
 
 import nl.qien.motorbike.model.Motorbike;
 import nl.qien.motorbike.persistence.MotorbikeRepository;
-import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 import java.util.Optional;
