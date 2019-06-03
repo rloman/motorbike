@@ -30,7 +30,7 @@ public class ScopeDemoIT {
 
     }
 
-    // add now @Scope("prototype") to MyBeans::jeroen and it should fail // see MyBeans::marjolijn
+    // add now @ScopeValidForSpringBootScopeAnnotation("prototype") to MyBeans::jeroen and it should fail // see MyBeans::marjolijn
     @Test
     public void testScopeDemoHisMarjolijnAndLocalMarjolijnShouldBeDifferentInstance() {
 

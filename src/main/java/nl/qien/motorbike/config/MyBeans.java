@@ -1,5 +1,6 @@
 package nl.qien.motorbike.config;
 
+import nl.qien.motorbike.enums.ScopeValidForSpringBootScopeAnnotation;
 import nl.qien.motorbike.model.Motorbike;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -33,7 +34,7 @@ public class MyBeans {
     }
 
     @Bean
-    @Scope("prototype")
+    @Scope(ScopeValidForSpringBootScopeAnnotation.SINGLETON)
     public Motorbike marjolijn() {
         Motorbike j = new Motorbike();
         j.setOwner("Marjolijn");
