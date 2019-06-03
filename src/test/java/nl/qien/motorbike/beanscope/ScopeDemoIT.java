@@ -18,7 +18,7 @@ public class ScopeDemoIT {
     private Motorbike jeroen;
 
     @Autowired
-    private Motorbike marjolein;
+    private Motorbike marjolijn;
 
     @Autowired
     private ScopeDemo scopeDemo;
@@ -30,11 +30,11 @@ public class ScopeDemoIT {
 
     }
 
-    // add now @Scope("prototype") to MyBeans::jeroen and it should fail // see MyBeans::marjolein
+    // add now @Scope("prototype") to MyBeans::jeroen and it should fail // see MyBeans::marjolijn
     @Test
     public void testScopeDemoHisMarjoleinAndLocalMarjoleinShouldBeDifferentInstance() {
 
-        Assert.assertTrue(this.marjolein != scopeDemo.getMarjolein());
+        Assert.assertTrue(this.marjolijn != scopeDemo.getMarjolein());
 
     }
 }
@@ -46,7 +46,7 @@ class ScopeDemo {
     private Motorbike jeroen;
 
     @Autowired
-    private Motorbike marjolein;
+    private Motorbike marjolijn;
 
 
     public Motorbike getJeroen() {
@@ -54,6 +54,6 @@ class ScopeDemo {
     }
 
     public Motorbike getMarjolein() {
-        return marjolein;
+        return marjolijn;
     }
 }

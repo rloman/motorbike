@@ -34,7 +34,7 @@ public class MyBeans {
 
     @Bean
     @Scope("prototype")
-    public Motorbike marjolein() {
+    public Motorbike marjolijn() {
         Motorbike j = new Motorbike();
         j.setOwner("Marjolein");
 

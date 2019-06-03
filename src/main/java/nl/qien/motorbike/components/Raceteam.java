@@ -16,6 +16,9 @@ public class Raceteam {
     @Autowired
     private Motorbike jasper;
 
+    @Autowired
+    private Motorbike marjolijn;
+
     public Motorbike getJeroen() {
         return jeroen;
     }

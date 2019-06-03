@@ -33,8 +33,9 @@ public class MotorbikeXmlParseApp {
 
 
         }
+    }
 
-
+    public static void writeToJson(Motorbike motorbike) {
     }
 
     public static void writeToXml(Motorbike motorbike) throws IOException {
