@@ -43,12 +43,12 @@ public class MotorbikeXmlParseApp {
     }
 
     public static Motorbike readFromFile(String fileName) throws JsonParseException, JsonMappingException, IOException {
-        File file = new File("motorbike.xml");
+        File file = new File(fileName);
         XmlMapper xmlMapper = new XmlMapper();
         String xml = getStringFromInputStream(new FileInputStream(file));
-        Motorbike value = xmlMapper.readValue(xml, Motorbike.class);
+        Motorbike motorbike = xmlMapper.readValue(xml, Motorbike.class);
 
-        return value;
+        return motorbike;
     }
 
     private static String getStringFromInputStream(InputStream is) throws IOException {

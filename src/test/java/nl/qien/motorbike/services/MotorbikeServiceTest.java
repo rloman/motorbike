@@ -3,6 +3,7 @@ package nl.qien.motorbike.services;
 import nl.qien.motorbike.model.Motorbike;
 import nl.qien.motorbike.persistence.MotorbikeRepository;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -15,25 +16,24 @@ import org.springframework.data.repository.CrudRepository;
 @RunWith(MockitoJUnitRunner.class)
 public class MotorbikeServiceTest {
 
-    @InjectMocks
     private MotorbikeService motorbikeService ;
 
-    @Spy
-//    @Mock
-    private CrudRepository<Motorbike, Long> motorbikeRepository = new MotorBikeRepoMock();
+    @Spy // before we used @Mock here but now WE HAVE A REAL INSTANCE!!!
+    private MotorbikeRepository motorbikeRepository = new MotorBikeRepoMock();
 
+
+    @Before
+    public void setup() {
+        this.motorbikeService = new MotorbikeService(this.motorbikeRepository);
+    }
 
     @Test
     public void testSave() {
 
-        this.motorbikeService = new MotorbikeService(this.motorbikeRepository);
+
         Motorbike b = new Motorbike();
         b.setColor("Black");
         b.setCc(500);
-
-        // make the mock do what I want
-        // given
-        Mockito.when(this.motorbikeRepository.save(b)).thenReturn(b);
 
         // actie
         // when
