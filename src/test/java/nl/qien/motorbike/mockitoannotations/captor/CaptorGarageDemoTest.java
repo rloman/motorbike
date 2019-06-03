@@ -1,4 +1,4 @@
-package nl.qien.motorbike.captor;
+package nl.qien.motorbike.mockitoannotations.captor;
 
 
 import org.junit.Assert;
@@ -22,7 +22,7 @@ public class CaptorGarageDemoTest {
     ArgumentCaptor argCaptor;
 
     @Test
-    public void whenUseCaptorAnnotation_thenTheSam() {
+    public void whenUseCaptorAnnotation_thenTheSame() {
         garage.add("one");
         Mockito.verify(mockedList).add(argCaptor.capture());
 

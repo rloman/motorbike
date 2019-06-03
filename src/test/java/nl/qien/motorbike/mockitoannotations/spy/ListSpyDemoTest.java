@@ -1,4 +1,4 @@
-package nl.qien.motorbike.spy;
+package nl.qien.motorbike.mockitoannotations.spy;
 
 import org.junit.Assert;
 import org.junit.Test;

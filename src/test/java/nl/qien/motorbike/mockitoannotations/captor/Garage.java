@@ -1,4 +1,4 @@
-package nl.qien.motorbike.captor;
+package nl.qien.motorbike.mockitoannotations.captor;
 
 import java.util.List;
 
