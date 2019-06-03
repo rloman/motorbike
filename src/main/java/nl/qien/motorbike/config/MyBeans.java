@@ -36,7 +36,7 @@ public class MyBeans {
     @Scope("prototype")
     public Motorbike marjolijn() {
         Motorbike j = new Motorbike();
-        j.setOwner("Marjolein");
+        j.setOwner("Marjolijn");
 
         return j;
     }

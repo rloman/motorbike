@@ -32,9 +32,9 @@ public class ScopeDemoIT {
 
     // add now @Scope("prototype") to MyBeans::jeroen and it should fail // see MyBeans::marjolijn
     @Test
-    public void testScopeDemoHisMarjoleinAndLocalMarjoleinShouldBeDifferentInstance() {
+    public void testScopeDemoHisMarjolijnAndLocalMarjolijnShouldBeDifferentInstance() {
 
-        Assert.assertTrue(this.marjolijn != scopeDemo.getMarjolein());
+        Assert.assertTrue(this.marjolijn != scopeDemo.getMarjolijn());
 
     }
 }
@@ -53,7 +53,7 @@ class ScopeDemo {
         return jeroen;
     }
 
-    public Motorbike getMarjolein() {
+    public Motorbike getMarjolijn() {
         return marjolijn;
     }
 }
