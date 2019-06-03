@@ -15,24 +15,21 @@ import java.util.List;
 public class ListSpyDemoTest {
 
     // a spy is a spy :-) It keeps tracks of the things that happen to it!
-    @Spy
+//    @Spy
     private List list = new ArrayList<>();
     // and yes ... a Spy is also used and usable to Spy on an existing legacy code project
 
     @Test
     public void testAdd() {
+
+        // do some with the concrete instance
         list.add("One");
         list.add("Two");
 
+        // test it
+
         Mockito.verify(this.list).add("One");
         Mockito.verify(this.list).add("Two");
-
-        Assert.assertEquals(2, list.size());
-
-//        Mockito.doReturn(100).when(list).size();
-
-        Mockito.when(this.list.size()).thenReturn(100);
-        Assert.assertEquals(100, list.size());
     }
 }
 

@@ -8,7 +8,9 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.mockito.Spy;
 import org.mockito.junit.MockitoJUnitRunner;
+import org.springframework.data.repository.CrudRepository;
 
 @RunWith(MockitoJUnitRunner.class)
 public class MotorbikeServiceTest {
@@ -16,8 +18,9 @@ public class MotorbikeServiceTest {
     @InjectMocks
     private MotorbikeService motorbikeService ;
 
+//    @Spy
     @Mock
-    private MotorbikeRepository motorbikeRepository;
+    private CrudRepository<Motorbike, Long> motorbikeRepository = new MotorBikeRepoMock();
 
 
     @Test
@@ -39,6 +42,9 @@ public class MotorbikeServiceTest {
         Assert.assertEquals(500, resultFromSave.getCc());
         Assert.assertEquals(0, resultFromSave.getId());
         Assert.assertEquals("Black", resultFromSave.getColor());
+
+        // check the spy stuff
+        Mockito.verify(this.motorbikeRepository).save(b);
 
     }
 

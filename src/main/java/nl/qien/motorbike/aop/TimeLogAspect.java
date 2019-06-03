@@ -31,6 +31,7 @@ public class TimeLogAspect {
 
             // please proceed with the REAL code
             value = proceedingJoinPoint.proceed();
+            // after finishing the real code, go on here please ...
 
         } catch (Throwable throwable) {
 
@@ -38,8 +39,11 @@ public class TimeLogAspect {
 
         } finally {
 
-            // when done ...
-            long duration = System.currentTimeMillis() - start;
+            // then ...
+
+            long endTime = System.currentTimeMillis();
+
+            long duration =  endTime - start;
 
             logger.info("{}.{} took {} ms",
                     proceedingJoinPoint.getSignature().getDeclaringType().getSimpleName(),

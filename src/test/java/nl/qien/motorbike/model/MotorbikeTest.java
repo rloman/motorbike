@@ -2,12 +2,18 @@ package nl.qien.motorbike.model;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mockito;
+import org.mockito.Spy;
+import org.mockito.junit.MockitoJUnitRunner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+@RunWith(MockitoJUnitRunner.class)
 public class MotorbikeTest {
 
 
+    @Spy
     private Motorbike motorbike = new Motorbike();
 
 
@@ -20,6 +26,8 @@ public class MotorbikeTest {
         log.info("Entering testGetAndSetForBrand");
 
         this.motorbike.setBrand("BMW");
+
+        Mockito.verify(this.motorbike).setBrand("BMW");
 
         Motorbike b = Motorbike.builder().brand("Suzuki").cc(500).color("Red").id(3).build();
 

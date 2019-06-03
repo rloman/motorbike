@@ -45,7 +45,7 @@ public class ReflectionDemo {
         {
             System.out.println("Methods: ======================");
             Method[] methods = Motorbike.class.getDeclaredMethods();
-            for(Method method: methods) {
+            for (Method method : methods) {
                 System.out.println(method.getName());
             }
         }
@@ -57,15 +57,14 @@ public class ReflectionDemo {
 
             Constructor<?>[] constructors = Motorbike.class.getConstructors();
 
-            for(Constructor<?> constructor: constructors) {
+            for (Constructor<?> constructor : constructors) {
 
                 System.out.println("Constructor:");
 
 
-
                 // now ... we are interesting in the parameters of the constructors???
 
-                for(Parameter parameter: constructor.getParameters()) {
+                for (Parameter parameter : constructor.getParameters()) {
 
                     System.out.printf("\tConstructor with type %s and name %s %n", parameter.getName(), parameter.getType().toString());
 
@@ -78,7 +77,7 @@ public class ReflectionDemo {
 
             //Question for group: Why do we see only one annotation (@Entity) ???
             Annotation[] annotations = Motorbike.class.getAnnotations();
-            for(Annotation annotation: annotations) {
+            for (Annotation annotation : annotations) {
                 System.out.printf("The class %s has annotation %s which is of type %s %n", Motorbike.class.toString(), annotation, annotation.annotationType());
             }
         }
