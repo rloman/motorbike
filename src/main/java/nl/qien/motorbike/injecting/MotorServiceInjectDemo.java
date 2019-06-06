@@ -3,6 +3,7 @@ package nl.qien.motorbike.injecting;
 import lombok.extern.slf4j.Slf4j;
 import nl.qien.motorbike.model.Car;
 import nl.qien.motorbike.model.Motorbike;
+import nl.qien.motorbike.model.Vehicle;
 import nl.qien.motorbike.persistence.CarRepository;
 import nl.qien.motorbike.services.MotorbikeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +40,7 @@ public class MotorServiceInjectDemo {
 
             Car c = new Car();
             this.carRepository.save(c);
+
         }
 
     }
