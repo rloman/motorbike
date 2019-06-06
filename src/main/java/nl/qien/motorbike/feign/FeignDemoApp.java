@@ -38,7 +38,6 @@ public class FeignDemoApp {
 
         // create a motorbike
         Motorbike newMotorbike = new Motorbike();
-        newMotorbike.setId(314);
         newMotorbike.setOwner("Francien");
         newMotorbike.setColor("Red");
         newMotorbike.setCc(750);
