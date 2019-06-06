@@ -1,18 +1,17 @@
 package nl.qien.motorbike.model;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
 @Entity
-public abstract class Vehicle {
+public abstract class Vehicle extends AbstractEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private boolean motorVehicle;
 
-    public long getId() {
-        return id;
+    public boolean isMotorVehicle() {
+        return motorVehicle;
+    }
+
+    public void setMotorVehicle(boolean motorVehicle) {
+        this.motorVehicle = motorVehicle;
     }
 }
