@@ -1,10 +1,14 @@
 package nl.qien.motorbike.model;
 
+import lombok.Data;
+
+import javax.persistence.Entity;
 import java.io.Serializable;
 
-public class Car implements Serializable {
+@Entity
+@Data
+public class Car extends Vehicle implements Serializable {
 
-    private long id;
     private String licensePlate;
     private int mileage;
 
@@ -14,10 +18,6 @@ public class Car implements Serializable {
 
     public Car(String licensePlate) {
         this.licensePlate = licensePlate;
-    }
-
-    public long getId() {
-        return id;
     }
 
     public String getLicensePlate() {

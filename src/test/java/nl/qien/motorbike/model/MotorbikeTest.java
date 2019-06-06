@@ -29,7 +29,7 @@ public class MotorbikeTest {
 
         Mockito.verify(this.motorbike).setBrand("BMW");
 
-        Motorbike b = Motorbike.builder().brand("Suzuki").cc(500).color("Red").id(3).build();
+        Motorbike b = Motorbike.builder().brand("Suzuki").cc(500).color("Red").build();
 
         Assert.assertEquals("BMW", this.motorbike.getBrand());
 
